@@ -1,0 +1,275 @@
+/* 全局重置与基础设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://example.com/space-background.jpg'); /* 替换为真实的科幻背景图片路径 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  /* 为背景添加一些闪烁的星星特效（使用伪元素和动画） */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(white, transparent);
+    opacity: 0.1;
+    pointer-events: none;
+    animation: twinkle 5s infinite ease-in-out;
+  }
+  
+  @keyframes twinkle {
+    0% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.1;
+    }
+  }
+  
+  /* 导航栏样式 */
+  nav {
+    background-color: rgba(0, 51, 102, 0.8);
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+  }
+  
+  nav h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  nav ul li a:hover {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  }
+  
+  nav input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgba(17, 17, 17, 0.8);
+    color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  nav input[type="text"]:focus {
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  
+  nav button {
+    background-color: #0055aa;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  nav button:hover {
+    background-color: #0077cc;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  
+  /* 容器与表单样式 */
+  .container {
+    width: 80%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .analysisForm {
+    background-color: rgba(17, 17, 17, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    width: 100%;
+    max-width: 600px;
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .analysisForm h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.4);
+  }
+  
+  .analysisForm div {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .analysisForm label {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #00ff00;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+  }
+  
+  .analysisForm input[type="text"],
+  .analysisForm input[type="number"] {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: rgba(34, 34, 34, 0.8);
+    color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .analysisForm input[type="text"]:focus,
+  .analysisForm input[type="number"]:focus {
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  
+  .analysisForm input[type="radio"] {
+    margin-right: 10px;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #00ff00;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .analysisForm input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #00ff00;
+  }
+  
+  .analysisForm select {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: rgba(34, 34, 34, 0.8);
+    color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .analysisForm select option {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .analysisForm button#addpatient {
+    background-color: #0077cc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .analysisForm button#addpatient:hover {
+    background-color: #0099ee;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  
+  .analysisForm h2 {
+    margin-top: 30px;
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.4), 0 0 20px rgba(0, 255, 255, 0.2);
+  }
+  
+  .analysisForm div#report {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 10px;
+    min-height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  }
+  
+  .searchcondition {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .searchcondition div#result {
+    padding: 20px;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 10px;
+    min-height: 150px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Analysis Data</title>
+    <link rel="stylesheet" href="./health_analysis.css">
+</head>
+<body>
+    <nav>
+        <h1>健康分析普查</h1>
+        <ul>
+            <li><a href="healthAnalysis.html" id = "home">Home</a></li>
+            <li><a href="./health_contact.html" id = "contact">Contact Us</a></li>
+            <li><input type="text" id="conditionInput" placeholder="输入健康状况"></li>
+            <li><button id="btnSearch">搜索</button>
+        </ul>    
+    </nav>
+    <div class = "container">
+    <div class = "analysisForm">
+        <h1>医疗数据分析</h1>
+        <div>
+            <label for = "name">name:</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for = "male">男</label>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for = "female">女</label>
+            <input type="radio" id="female" name="gender" value="Female">
+        </div>
+        <div>
+            <label for="age">年龄：</label>
+            <input type="number" id="age">
+        </div>
+        <div>
+            <label for="condition">状态：</label>
+            <select id="condition">
+                <option value="">选择状态</option>
+                <option value="Diabetes">糖尿病</option>
+                <option value="Thyroid">甲状腺</option>
+                <option value="High Blood Pressure">高血压</option>
+            </select>
+        </div>
+        <button id="addpatient">添加病人</button>
+        <h2>分析报告</h2>
+        <div id="report"></div>
+    </div>
+        <div class="searchcondition">
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="./health_analysis.js"></script>
+
+</body>
+</html>    
